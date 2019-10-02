@@ -1,3 +1,5 @@
 <!--pages/home/home.wxml-->
 <text class="title"> Hello World </text>
 <button size="mini" bindtap="clickHandle">按钮</button>
+<image></image>
+<text>demo2</text>
