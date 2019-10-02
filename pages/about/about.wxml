@@ -1,2 +1,8 @@
 <!--pages/about/about.wxml-->
 <text>pages/about/about.wxml</text>
+<button bindtap="changeData"> 下一页 </button>
+<view class="item" wx:for="{{news}}">
+  <view>{{item.name}}</view>
+  <view>{{item.text}}</view>
+  <view>{{item.screen_name}}</view>
+</view>

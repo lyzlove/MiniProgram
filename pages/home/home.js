@@ -1,4 +1,6 @@
 // pages/home/home.js
+const app = getApp();
+console.log(app.globalData.name)
 Page({
   data: {
     msg: "Hello World",
@@ -10,7 +12,11 @@ Page({
       { id: 3, name: 'ww', sex: 'male' },
     ]
   },
+  handleGetUserInfo(e){
+    console.log(e)
+  },
   handleCounterAdd(){
+    console.log()
     // 错误的做法
     // this.data.count++
     // console.log(this.data.count)

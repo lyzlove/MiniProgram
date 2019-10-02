@@ -10,3 +10,8 @@
 <view>count:{{ count }}</view>
 <button size="mini" bindtap="handleCounterMinus">-</button>
 <button size="mini" bindtap="handleCounterAdd">+</button>
+<button size="mini" open-type="getUserInfo" bindgetuserinfo="handleGetUserInfo">获取信息</button>
+<view>
+  <open-data type='userNickName'></open-data>
+  <open-data type='userAvatarUrl'></open-data>
+</view>
