@@ -1,65 +1,41 @@
 // pages/home/home.js
 Page({
-
-  /**
-   * 页面的初始数据
-   */
   data: {
-
+    msg: "Hello World",
+    data: "数据绑定",
+    count: 0 ,
+    lists: [
+      { id: 1, name: 'zs', sex: 'male' },
+      { id: 2, name: 'ls', sex: 'female' },
+      { id: 3, name: 'ww', sex: 'male' },
+    ]
   },
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function (options) {
-
+  handleCounterAdd(){
+    // 错误的做法
+    // this.data.count++
+    // console.log(this.data.count)
+    if (this.data.count >= 10){
+      this.setData({
+        count: 10
+      })
+      
+    }else{
+      this.setData({
+        count: this.data.count + 1
+      })
+    }
   },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
+  handleCounterMinus(){
+    if (this.data.count <= 0){
+      this.setData({
+        count: 0
+      })
+    }else{
+      this.setData({
+        count: this.data.count - 1
+      })
+    }
   }
 })
+// 命令式编程
+// 声明式编程

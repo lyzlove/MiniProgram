@@ -1,4 +1,12 @@
 <!--pages/home/home.wxml-->
-<text class="title"> Hello World </text>
-<button >按钮</button>
-<view>demo1</view>
+<!-- 数据绑定 -->
+<view> demo1 </view>
+<view>  {{ msg }} </view>
+<view >  {{ data }} </view>
+<view >  {{ 1 + 2 }} </view>
+<view >  {{ lists[0].name }} </view>
+<view wx:for = "{{lists}}">{{item.id}} -- {{item.name}} -- {{item.sex}}</view>
+
+<view>count:{{ count }}</view>
+<button size="mini" bindtap="handleCounterMinus">-</button>
+<button size="mini" bindtap="handleCounterAdd">+</button>
