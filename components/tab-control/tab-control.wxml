@@ -1,0 +1,11 @@
+<!--components/tab-control/tab-control.wxml-->
+<view class="tab-control">
+  <!-- <view class="control-item">流行</view>
+  <view class="control-item">新歌</view>
+  <view class="control-item">推荐</view> -->
+  <block wx:for="{{titles}}" wx:key="{{index}}"  >
+    <view bindtap="changeIndex" class="control-item {{ currentIndex === index ? 'active' : ''}}" data-index="{{index}}">{{item}}</view>
+  </block>
+
+</view>
+<!-- <slot /> -->

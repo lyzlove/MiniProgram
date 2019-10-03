@@ -1,4 +1,4 @@
 <!--pages/home/home.wxml-->
-<text class="title"> Hello World </text>
-<button >按钮</button>
-<view>demo1</view>
+<tab-control titles="{{ titles }}" bind:itemClick="clickItem">
+  <button>按键</button>
+</tab-control>
