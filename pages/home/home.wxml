@@ -1,4 +1,13 @@
 <!--pages/home/home.wxml-->
 <text class="title"> Hello World </text>
-<button >按钮</button>
+<button bindtap="showToast">按钮</button>
 <view>demo1</view>
+<button size="mini" open-type="share">分享</button>
+
+<button bindtap="loginHandle"></button>
+<navigator url="/pages/detail/detail?name=lyz&sex=male&age=30" >跳到其他页面</navigator>
+<navigator url="/pages/about/about" open-type="redirect">redirect跳到其他页面</navigator>
+<navigator url="/pages/about/about" open-type="switchTab">switch跳到其他页面</navigator>
+
+<text>{{msg}}</text>
+<button bindtap="navigatorHandle"> 跳转detail </button>

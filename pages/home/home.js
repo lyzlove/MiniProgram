@@ -1,65 +1,78 @@
 // pages/home/home.js
+import request from '../../utils/network.js'
 Page({
 
-  /**
-   * 页面的初始数据
-   */
   data: {
-
+    msg: '这是首页的数据'
   },
-  /**
-   * 生命周期函数--监听页面加载
-   */
+
   onLoad: function (options) {
+    // this.getDataHttp();
+    wx.showLoading({
+      title: '加载中',
+    })
+    request({
+      url: 'https://www.apiopen.top/satinGodApi?type=1&page=1',
+    }).then( res => {
+      console.log(res.data.data)
+      wx.hideLoading({
+        title: '加载中',
+      })
+    }).catch( err => {
+      console.log(err)
+    })
+
+    // wx.request({
+    //   // url: 'https://www.apiopen.top/satinGodApi?type=1&page=1',
+    //   url: 'https://httpbin.org/post',
+    //   method: 'post',
+    //   success: function(res){
+    //     console.log(res)
+    //   }
+    // })
+  },
+  showToast: function(){
+    // wx.showToast({
+    //   title: '弹框提示',
+    //   duration: 2000,
+    //   icon: 'loading'
+    // })
+    wx.showModal({
+      title: '弹框提示',
+      content: 'loading',
+      mask: true
+    })
+    // wx.showLoading({
+    //   title: '加载中',
+    // })
 
   },
 
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-
+  getDataHttp() {
+    wx.request({
+      url: 'https://www.apiopen.top/satinGodApi?type=1&page=1',
+      // url: 'https://httpbin.org/post',
+      method: 'post',
+      success: function (res) {
+        console.log(res)
+      }
+    })
   },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-
+  onShareAppMessage: function(opions){
+    return {
+      title: '这是小程序分享测试',
+      path: '/pages/home/home',
+      imageUrl: '/assets/images/1.jpg'
+    }
   },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
+  loginHandle: function(){
+    wx.login({
+      
+    })
   },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
+  navigatorHandle: function(){
+    wx.navigateTo({
+      url: '/pages/detail/detail?title=Hello,MiniProgram',
+    })
   }
 })
