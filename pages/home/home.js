@@ -5,7 +5,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    images:[]
   },
   /**
    * 生命周期函数--监听页面加载
@@ -61,5 +61,26 @@ Page({
    */
   onShareAppMessage: function () {
 
-  }
+  },
+  chooseImage: function(){
+    var _self = this;
+    wx.chooseImage({
+      success: function(res) {
+        console.log(res)
+        _self.setData({
+          images: res.tempFilePaths
+        })
+      },
+    })
+  },
+  imgLoader: function(){
+    console.log('图片加载')
+  },
+  dataHandle: function(e){
+    console.log(e.target.dataset.name)
+  },
+  captureHandle: function(){
+    console.log('捕获')
+  },
+  
 })

@@ -1,0 +1,4 @@
+var sex = "female"
+module.exports = {
+  sex: sex
+}

@@ -1,0 +1,5 @@
+<template name='con_template'>
+  <view>
+    <text>{{msg}}</text>
+  </view>
+</template>

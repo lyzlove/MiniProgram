@@ -1,0 +1,6 @@
+/* components/my-tag/my-tag.wxss */
+.my-tag{
+  background-color: #F90;
+  height: 100rpx;
+  margin-bottom: 20rpx;
+}

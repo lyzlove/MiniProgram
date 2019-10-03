@@ -2,3 +2,46 @@
 <text class="title"> Hello World </text>
 <button >按钮</button>
 <view>demo1</view>
+<view>
+  <text >文本内容文本内容文本内容文本内容</text>
+</view>
+<button plain size="mini" type="warn">按钮</button>
+<button plain size="mini" type="default">按钮</button>
+<button plain size="mini" disabled>按钮</button>
+<button plain size="mini" loading>按钮</button>
+
+<!-- <view>
+<image show-menu-by-longpress src="/assets/img/1.jpg" />
+  <text>图片演示</text>
+  <image wx:for="{{10}}" lazy-load bindload="imgLoader" src='https://res.wx.qq.com/wxdoc/dist/assets/img/0.4cb08bb4.jpg' />
+</view> -->
+<button hover-class="press" bindtap="chooseImage">图片选择</button>
+<view>
+  <image wx:for='{{images}}' wx:key='item' src="{{item}}"></image>
+</view>
+
+<input type="idcard" value="" placeholder="idcard"></input>
+<input type="digit" value=""  placeholder="digit"></input>
+<input type="number" value=""  placeholder="number"></input>
+<input type="text" value=""  placeholder="text"></input>
+<import src="/pages/home/template/template.wxml" />
+
+<template is="con_template" data="{{ msg:123 }}" />
+<include src= "template/common.wxml"  />
+
+ <wxs module='info'>
+    var name = "Lily"
+    module.exports = {
+      name: name
+    }
+  </wxs>
+  <view>{{info.name}}</view>
+  <wxs src="template/text.wxs"  module='gender' />
+  <view>{{gender.sex}}</view>
+  <view  class="container"></view>
+<button capture-bind:tap="captureHandle" bindtap="dataHandle" data-name="lyz">获取点击数据</button>
+<text>------华丽的分割线-------</text>
+
+<my-tag></my-tag>
+<my-tag />
+

@@ -1,0 +1,4 @@
+<!--components/my-tag/my-tag.wxml-->
+<view class="my-tag">
+  <text>我是自定义组件</text>
+</view>
