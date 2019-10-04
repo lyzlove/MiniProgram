@@ -1,29 +1,17 @@
-// pages/home/home.js
-import { getImagesData, getLists} from  '../../service/home.js'
-
-
+// pages/cart/cart.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    images: []
+
   },
+
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    // 轮播图接口 123.207.32.32:8000/home/multidata
-    getImagesData().then( res => {
-      console.log(res)
-        this.setData({
-        images: res.data
-      })
-    })
-    getLists().then( res => {
-      console.log(res)
-    })
 
   },
 

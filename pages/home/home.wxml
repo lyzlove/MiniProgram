@@ -1,4 +1,6 @@
 <!--pages/home/home.wxml-->
-<text class="title"> Hello World </text>
-<button >按钮</button>
-<view>demo1</view>
+<index-swiper images="{{images}}" />
+
+<view>
+  
+</view>
